@@ -55,8 +55,8 @@ var protocal = options.secure ? 'https://' : 'http://';  // Don't forget to chan
 if(options.type == 'session'){
 
   options['parsePath']        = config.parsePath || process.env.PARSE_PATH || '/parse';
-  options['serverURL']        = config.serverUrl || process.env.SERVER_URL || protocal + options.host + ':' + options.port + options.parsePath;
-  options['publicServerURL']  = config.publicServerUrl || process.env.PUBLIC_SERVER_URL || protocal + options.host + ':' + options.port + options.parsePath;
+  options['serverURL']        = config.serverURL || process.env.SERVER_URL || protocal + options.host + ':' + options.port + options.parsePath;
+  options['publicServerURL']  = config.publicServerURL || process.env.PUBLIC_SERVER_URL || protocal + options.host + ':' + options.port + options.parsePath;
 
   options['mongodb']  = config.mongodb || process.env.MONGODB;
   options['app']      = config.app || process.env.APP_ID || 'STALK';
