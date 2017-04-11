@@ -65,6 +65,7 @@ if(options.type == 'session'){
   options['cloud']    = config.cloud || process.env.CLOUD || './lib/cloud/index.js';
   options['appName']  = config.appName || process.env.APP_NAME || options.app;
   options['verifyUserEmails'] = config.verifyUserEmails || !!+(process.env.VERIFY_USER_EMAILS) || false;
+  options['aws']  = config.aws;
 
   if(config.emailAdapter) options['emailAdapter'] = config.emailAdapter;
   if(process.env.EMAIL_ADAPTER_FILE) options['emailAdapter'] = loadJsonSync(emailAdapterFile);
