@@ -61,7 +61,7 @@ if(options.type == 'session'){
   options['mongodb']  = config.mongodb || process.env.MONGODB;
   options['app']      = config.app || process.env.APP_ID || 'STALK';
   options['master']   = config.master || process.env.MASTER_KEY || 's3cR3T';
-  options['push']     = config.push || utils.getPushConfig(); // @ TODO HAVE TO IMPLEMENT !!
+  options['push']     = config.push || utils.getPushConfig();
   options['cloud']    = config.cloud || process.env.CLOUD || './lib/cloud/index.js';
   options['appName']  = config.appName || process.env.APP_NAME || options.app;
   options['verifyUserEmails'] = config.verifyUserEmails || !!+(process.env.VERIFY_USER_EMAILS) || false;
@@ -77,6 +77,8 @@ if(options.type == 'session'){
     };
   }
 
+} else {
+  options['push']     = config.push || utils.getPushConfig();
 }
 
 options['logo'] = [
