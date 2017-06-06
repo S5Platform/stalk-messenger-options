@@ -79,7 +79,11 @@ if(options.type == 'session'){
   }
 
 } else {
+  options['mongodb']  = config.mongodb || process.env.MONGODB;
+  options['master']   = config.master || process.env.MASTER_KEY || 's3cR3T';
+  options['app']      = config.app || process.env.APP_ID || 'STALK';
   options['push']     = config.push || utils.getPushConfig();
+  options['appName']  = config.appName || process.env.APP_NAME || options.app;
 }
 
 options['logo'] = [
