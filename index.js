@@ -77,6 +77,8 @@ if(options.type == 'session'){
       folder: path.resolve(process.cwd(), config.static.folder)
     };
   }
+  
+  if(config.filesAdapter) options['filesAdapter'] = config.filesAdapter;
 
 } else {
   options['mongodb']  = config.mongodb || process.env.MONGODB;
