@@ -78,6 +78,9 @@ if(options.type == 'session'){
     };
   }
   
+  options[channe;
+          
+  if(config.channelProtocol) options['channelProtocol'] = config.channelProtocol;
   if(config.filesAdapter) options['filesAdapter'] = config.filesAdapter;
 
 } else {
