@@ -77,8 +77,6 @@ if(options.type == 'session'){
       folder: path.resolve(process.cwd(), config.static.folder)
     };
   }
-  
-  options[channe;
           
   if(config.channelProtocol) options['channelProtocol'] = config.channelProtocol;
   if(config.filesAdapter) options['filesAdapter'] = config.filesAdapter;
