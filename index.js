@@ -22,6 +22,7 @@ var config = loadJsonSync(argv.config);
 var options = {};
 options['host'] = argv.host || config.host || process.env.HOST || utils.getIP();
 options['port'] = argv.port || config.port || process.env.PORT || 8080;
+options['serverName'] = argv.serverName || process.env.SERVER_NAME;
 options['secure'] = config.secure || process.env.SECURE || false; // true(HTTP) or false(HTTPS)
 
 options['zookeeper'] = config.zookeeper || process.env.ZOOKEEPER;
