@@ -22,6 +22,7 @@ var config = loadJsonSync(argv.config);
 var options = {};
 options['host'] = argv.host || config.host || process.env.HOST || utils.getIP();
 options['port'] = argv.port || config.port || process.env.PORT || 8080;
+options['proxyPort'] = argv.proxyPort || process.env.PROXY_PORT; // if use haproxy
 options['serverName'] = argv.serverName || process.env.SERVER_NAME;
 options['secure'] = config.secure || process.env.SECURE || false; // true(HTTP) or false(HTTPS)
 
@@ -67,7 +68,7 @@ if(options.type == 'session'){
   options['appName']  = config.appName || process.env.APP_NAME || options.app;
   options['verifyUserEmails'] = config.verifyUserEmails || !!+(process.env.VERIFY_USER_EMAILS) || false;
   options['aws']  = config.aws;
-  options['routePath']        = config.routePath; 
+  options['routePath']        = config.routePath;
 
   if(config.emailAdapter) options['emailAdapter'] = config.emailAdapter;
   if(process.env.EMAIL_ADAPTER_FILE) options['emailAdapter'] = loadJsonSync(emailAdapterFile);
@@ -78,7 +79,7 @@ if(options.type == 'session'){
       folder: path.resolve(process.cwd(), config.static.folder)
     };
   }
-          
+
   if(config.channelProtocol) options['channelProtocol'] = config.channelProtocol;
   if(config.filesAdapter) options['filesAdapter'] = config.filesAdapter;
 
